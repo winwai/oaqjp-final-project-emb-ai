@@ -44,4 +44,4 @@ def emotion_detector(text_to_analyse):
         joy = None
         sadness = None
         dominant_emotion = None # Set dominant_emotion to None as well
-
+    '''
