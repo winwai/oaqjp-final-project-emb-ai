@@ -25,6 +25,15 @@ def emotion_detector(text_to_analyse):
 
         # Determine the dominant emotion
         dominant_emotion, max_score = max(emotions_dict.items(), key=lambda item: item[1])
+    # If the response status code is 400, set to None
+    elif response.status_code == 400:
+        anger = None
+        disgust = None
+        fear = None
+        joy = None
+        sadness = None
+        dominant_emotion = None
+
 
     # Return all scores and the dominant emotion in a dictionary
     return {
@@ -35,13 +44,4 @@ def emotion_detector(text_to_analyse):
         'sadness': sadness,
         'dominant_emotion': dominant_emotion # Include the new key
     }
-    '''
-    # If the response status code is 500, set all values to None
-    elif response.status_code == 500:
-        anger = None
-        disgust = None
-        fear = None
-        joy = None
-        sadness = None
-        dominant_emotion = None # Set dominant_emotion to None as well
-    '''
+
